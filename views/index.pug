@@ -37,7 +37,7 @@ block content
             p(class="h3") Descriptografar
         
         div(class="row text-center")
-            form(method="POST" action="/decrypto")
+            form(method="POST" action="/decrypto" encType="multipart/form-data" ref="uploadForm" id="uploadForm" )
                 div(class="form-group")
                     label(for="uploadFile") Selecione o Arquivo que deseja desincroptografar
                     input(

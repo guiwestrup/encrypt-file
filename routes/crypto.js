@@ -7,7 +7,7 @@ const encrypt = require('../functions/encrypt.js');
 
 router.post('/', function (req, res) {
 
-    let messageEncrypt = encrypt.encrypt(req.body.message);
+    let messageEncrypt = encrypt.encrypt(Buffer.from(req.body.message));
     const pathFile = path.join(__dirname, "../storage/" + req.body.fileName + ".txt");
     fs.writeFile(pathFile, messageEncrypt, function(err) {
         if (err) throw err;
